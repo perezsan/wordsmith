@@ -31,9 +31,13 @@ First of all, you should have [Pandoc][pandoc] installed in your system.
 
 Next, install the wordsmith ruby gem.
 
-    $ gem install wordsmith
+    $ git clone https://github.com/perezsan/wordsmith.git
+    $ cd wordsmith
+    $ bundle install (gem install bundle 1st if you don't have it installed)
+    $ rake build
+    $ gem install pkg/wordsmith-0.0.6.gem
 
-Now you're good to go.
+Now you're good to go. 
 
 ## Usage
 
