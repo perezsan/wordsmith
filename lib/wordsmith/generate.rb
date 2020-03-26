@@ -58,7 +58,7 @@ class Wordsmith
       compile_stylesheets
       copy_assets
 
-      cmd = "pandoc -f markdown_mmd -s -S --toc -o #{File.join(output, "index.html")} -t html"
+      cmd = "pandoc -f markdown_mmd+smart -s --toc -o #{File.join(output, "index.html")} -t html"
       stylesheets.each { |stylesheet| cmd += " -c #{stylesheet}" }
       cmd += " -B #{header}" if header
       cmd += " -A #{footer}" if footer
@@ -66,15 +66,33 @@ class Wordsmith
       cmd
     end
 
+    def to_odt
+      info "Generating Openoffice ODT Manuscript format..."
+
+      compile_stylesheets
+      copy_assets
+
+       cmd = "pandoc -f markdown_mmd -s -o #{File.join(output, "#{name}.odt")} -t odt"
+       cmd += " \\\n#{files}"
+     end
+
     def to_epub
       info "Generating epub..."
 
       build_metadata_xml
 
-      cmd = "pandoc -f markdown_mmd -S -o #{output}.epub -t epub"
+      ## Code below generates metadata fine with author and title detail
+      ## but its epub.css it shite. Would rather use unoconv if I could get
+      ## it to integrate nicely here somehow.  Figure I'm just missing proper quotes
+      ## somewhere in my hodgepodge of scripts, as apposed to
+      ## when I did have it working at one time with unoconv here. QQ.
+      ## pandoc solution below only works with 2.0 branch, not 1.0. Use -S instead
+      ## of +smart if still on the older pandoc for whatever reasons **cough funtoo**
+      ## ** cough centos **
+      cmd = "pandoc -f markdown_mmd+smart -o #{output}.epub -t epub"
       cmd += " \\\n--epub-metadata=#{metadata}" if metadata
       cmd += " \\\n--epub-cover-image=#{cover}" if cover
-      cmd += " \\\n--epub-stylesheet=#{epub_stylesheet}" if epub_stylesheet
+      cmd += " \\\n--css=#{epub_stylesheet}" if epub_stylesheet
       cmd += " \\\n#{files}"
       cmd
     end
@@ -91,23 +109,7 @@ class Wordsmith
     def to_pdf
       info "Generating pdf..."
 
-      engine = ""
-
-      [["xetex", "xelatex"], ["pdftex", "pdflatex"], "lualatex"].each do |e|
-        if e.is_a? Array
-          cmd, name = e
-        else
-          cmd = name = e
-        end
-        if can_run?(cmd + " -v")
-          engine = name
-          break
-        end
-      end
-
-      cmd = "pandoc -f markdown_mmd -N --toc -o #{output}.pdf #{files}"
-      cmd += " --latex-engine=#{engine}" unless engine.empty?
-      cmd += " -V mainfont='#{config['font']}'" unless (config.fetch('font', '')).empty?
+      cmd = "unoconv #{output}.odt"
       cmd
     end
 
