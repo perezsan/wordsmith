@@ -14,7 +14,7 @@ in the following formats:
   * mobi
   * pdf
   * html
-  * odt (via **unoconv -- must install separately**)
+  * odt (via **unoconv -- must install separately. Easiest way if you have pip is: 'pip install unoconv'**)
 
 You can also publish your book to your github project page with a single command.
 
