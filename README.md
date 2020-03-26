@@ -14,7 +14,7 @@ in the following formats:
   * mobi
   * pdf
   * html
-  * odt (via **unoconv -- must install separately. Easiest way if you have pip is: 'pip install unoconv'**)
+  * odt (via **unoconv -- must install separately.)
 
 You can also publish your book to your github project page with a single command.
 
@@ -26,6 +26,10 @@ but with a few extra goodies such as painless installation.
 ## Installing
 
 First of all, you should have [Pandoc][pandoc] installed in your system.
+Also, Unoconv. *pip install unoconv* is the easiest method if you have Python installed.
+_(May need to add unoconv pythin bin dir to $PATH if you're already not set up. 
+Distro Package managers usually have unoconv, as well, but most are out-of-date/out-of-sync; you'll get
+the best mileage out of pip's version, imho, or even from git.)_
 
 [pandoc]: http://johnmacfarlane.net/pandoc/installing.html
 
