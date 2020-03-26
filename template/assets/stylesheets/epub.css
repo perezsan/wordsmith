@@ -1,44 +1,64 @@
-html {
-  margin: 0;
-  padding: 40px;
-  background: #DFE1E5;
-}
-body {
-  margin: 0;
-  padding: 30px;
-  font-family: "Lucida Grande",verdana,arial,helvetica,sans-serif;
-  font-size: 14px;
-  color: #373737;
-  width: 800px;
-  background:  rgba(255, 255, 255, 0.8);
-  -webkit-box-shadow: 2px 2px 6px rgba(0,0,0,.30);
-  -moz-box-shadow: 2px 2px 6px rgba(0,0,0,.30);
-  box-shadow: 2px 2px 6px rgba(0,0,0,.30);
-  border: 1px solid #C7C7C7;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+/*
 
+An ebook stylsheet for Writer As A Stranger
+
+Ian Hocking 2013
+
+*/
+p
+{
+  text-indent:1em;
+  margin-top:0;
+  margin-bottom:0;
 }
-a {
-  color: #1A4882;
+
+h1, h2
+{
+  text-align:center;
+  text-indent:0;
+  margin-top:0;
 }
-h1, h2, h3 {
-  margin: 30px 0 10px 0;
+
+A:link
+{
+  color:#0000ff;
 }
-body {
-  display: inline-block;
+
+hr {
+  margin-top: 3em;
+  border: none; 
 }
-div#TOC {
-  border: 1px solid #C7C7C7;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-div#cover {
+
+h5 {
   text-align: center;
-  padding: 0 0 30px 0;
+  height: 1em;
 }
-div#cover img {
-  max-height: 400px;
-}
+
+#wrapper img {
+  max-width: 100%;
+  height: auto; }
+
+blockquote p {
+  margin-top: 1em;
+  text-indent: 0;
+  font-style: italic; }
+
+blockquote+p {
+  margin: 0; 
+  text-indent: 1em;
+  }
+
+h2+p {
+  margin: 0; 
+  text-indent: 0;
+  }
+
+h3+p {
+  margin: 0; 
+  text-indent: 0;
+  }
+
+h5+p {
+  margin: 0; 
+  text-indent: 0;
+  }
