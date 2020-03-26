@@ -14,6 +14,7 @@ in the following formats:
   * mobi
   * pdf
   * html
+  * odt (via **unoconv -- must install separately**)
 
 You can also publish your book to your github project page with a single command.
 
