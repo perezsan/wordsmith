@@ -12,9 +12,9 @@ in the following formats:
 
   * epub
   * mobi
-  * pdf
+  * pdf (via **unoconv -- must install separately.)
   * html
-  * odt (via **unoconv -- must install separately.)
+  * odt (via pandoc)
 
 You can also publish your book to your github project page with a single command.
 
