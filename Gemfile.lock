@@ -10,15 +10,21 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
-    git (1.2.6)
-    kindlegen (2.8.0)
-      systemu
-    mini_portile (0.5.2)
-    nokogiri (1.6.1)
-      mini_portile (~> 0.5.0)
+    ffi (1.11.1)
+    git (1.5.0)
+    kindlegen (2.9.7)
+    mini_portile2 (2.4.0)
+    nokogiri (1.10.3)
+      mini_portile2 (~> 2.4.0)
     rake (0.9.2.2)
-    sass (3.2.13)
-    systemu (2.6.0)
+    rb-fsevent (0.10.3)
+    rb-inotify (0.10.0)
+      ffi (~> 1.0)
+    sass (3.7.4)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     test-unit (2.4.8)
 
 PLATFORMS
@@ -28,3 +34,6 @@ DEPENDENCIES
   rake
   test-unit
   wordsmith!
+
+BUNDLED WITH
+   1.17.3
