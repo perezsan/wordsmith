@@ -2,7 +2,7 @@ require 'rubygems'
 require 'bundler/setup'
 
 require 'nokogiri'
-require 'kindlegen'
+
 require 'yaml'
 require 'git'
 
